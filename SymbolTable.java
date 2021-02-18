@@ -12,26 +12,28 @@ import java.util.Map.Entry;
  */
 public class SymbolTable {
     
-    public HashMap<String, Symbol> symbolTable;//value,key
-    Symbol symbl1;
+    public HashMap<String, Symbol> symbolTable; //value,key
+    
     public SymbolTable() {
         symbolTable = new HashMap<>();
-  
-        
-    }
-  //Put Method to add new pairs - in progress
-   public boolean AddPair(String key1, Symbol sym1) {
-        if (HasKey(key1)) {
-            symbolTable.put(key1, sym1);
-            return true;
-        }
-        return false;
     }
     
-
-   public boolean HasKey(String key1) {
-        return symbolTable.containsKey(key1);
+    public HashMap<String, Symbol> GetTable(){
+        return symbolTable;
     }
-
+    
+  //Put Method to add new pairs - in progress
+   public void AddPair(String key, Symbol sym) {
+        if (HasKey(key)) {
+            symbolTable.put(key, sym);
+            return;
+        }
+       //add new key
+       return;
+    }
+    
+   public boolean HasKey(String key) {
+        return symbolTable.containsKey(key);
+    }
 
 }
